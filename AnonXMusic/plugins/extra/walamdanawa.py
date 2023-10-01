@@ -58,7 +58,8 @@ txt1 = [
 
 async def cutt(client: Client, message: Message):
 
-     dev = OWNER_ID
+     dev = (OWNER_ID)
+     get = await client.get_chat_member(message.chat.id, message.from_user.id)
      if message.from_user.id in dev:
 
 
