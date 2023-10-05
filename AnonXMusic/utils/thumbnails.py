@@ -1,6 +1,5 @@
 import os
 import re
-import textwrap
 
 import aiofiles
 import aiohttp
@@ -78,7 +77,6 @@ async def get_thumb(videoid):
         font2 = ImageFont.truetype("AnonXMusic/assets/font2.ttf", 70)
         arial = ImageFont.truetype("AnonXMusic/assets/font2.ttf", 30)
         name_font = ImageFont.truetype("AnonXMusic/assets/font.ttf", 30)
-        para = textwrap.wrap(title, width=32)
         j = 0
         draw.text(
             (5, 5), f"IQ MUSIC", fill="white", font=name_font
