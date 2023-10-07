@@ -171,14 +171,14 @@ async def without_Admin_rights(client, CallbackQuery, _):
 
     if command == "AQ":
         try:
-            await CallbackQuery.answer(_["set_cb_1"], show_alert=True)
+            await CallbackQuery.answer(_["set_cb_6"], show_alert=True)
         except:
             pass
         aud = await get_aud_bit_name(CallbackQuery.message.chat.id)
         buttons = await gen_buttons_aud(_, aud)
     if command == "VQ":
         try:
-            await CallbackQuery.answer(_["set_cb_2"], show_alert=True)
+            await CallbackQuery.answer(_["set_cb_7"], show_alert=True)
         except:
             pass
         aud = await get_vid_bit_name(CallbackQuery.message.chat.id)
@@ -275,7 +275,7 @@ async def addition(client, CallbackQuery, _):
 async def aud_vid_cb(client, CallbackQuery, _):
     command = CallbackQuery.matches[0].group(1)
     try:
-        await CallbackQuery.answer(_["set_cb_6"], show_alert=True)
+        await CallbackQuery.answer(_["set_cb_8"], show_alert=True)
     except:
         pass
     if command == "LOW":
