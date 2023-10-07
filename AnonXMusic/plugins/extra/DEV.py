@@ -3,7 +3,7 @@ import asyncio
 import os
 import time
 import requests
-from config import USER_OWNER, OWNER_ID, CHANNEL_OWNER, SUPPORT_CHANNEL
+from config import USER_OWNER, OWNER_ID, SUPPORT_CHANNEL
 from pyrogram import filters
 import random
 from pyrogram import Client, enums
@@ -131,7 +131,7 @@ async def yas(client, message):
    
 )
 async def yas(client, message):
-    usr = await client.get_chat(CHANNEL_OWNER)
+    usr = await client.get_chat(SUPPORT_CHANNEL)
     photo = await client.download_media(usr.photo.big_file_id)
     await message.reply_photo(photo,       caption=f"<b> <a href={SUPPORT_CHANNEL}>⧉• 𝙎𝙊𝙐𝙍𝘾𝞝 𝙄𝙌 - 🧑🏻‍💻🖤 کەناڵی سەرچاوە</a>\nجۆینی کەناڵی بۆت بکە بۆ بینینی بابەتی جیاوازتر♥\n\n بەستەری کەناڵ :\nhttps://t.me/{usr.username} </b>", 
     reply_markup=InlineKeyboardMarkup(
