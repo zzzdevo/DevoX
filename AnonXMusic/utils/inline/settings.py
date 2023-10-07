@@ -6,11 +6,8 @@ from pyrogram.types import InlineKeyboardButton
 def setting_markup(_):
     buttons = [
         [
-            InlineKeyboardButton(
-                text=_["ST_B_25"], callback_data="AQ"
-            ),
-            InlineKeyboardButton(
-                text=_["ST_B_26"], callback_data="VQ"),
+            InlineKeyboardButton(text=_["ST_B_25"], callback_data="AQ"),
+            InlineKeyboardButton(text=_["ST_B_26"], callback_data="VQ"),
         ],
         [
             InlineKeyboardButton(text=_["ST_B_1"], callback_data="AU"),
