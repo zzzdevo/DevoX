@@ -17,6 +17,7 @@ from AnonXMusic.utils.database import (
     get_playtype,
     get_upvote_count,
     get_vid_bit_name,
+    get_aud_bit_name,
     is_nonadmin_chat,
     is_skipmode,
     remove_nonadmin_chat,
