@@ -57,14 +57,13 @@ txt1 = [
 
 
 async def cutt(client: Client, message: Message):
-
      dev = (OWNER_ID)
      if message.from_user.id in dev:
 
 
          b = random.choice(txt1)
 
-
+         usr = await client.get_chat(message.from_user.id)
          await message.reply(
 
          f"{b}")
