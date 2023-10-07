@@ -7,11 +7,13 @@ from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from strings.filters import command
 from pyrogram import filters, Client
+import config
 
 
 
 txt = [
-            "**هەردەم پێبکەنە ♥️😻**",
+
+           "**هەردەم پێبکەنە ♥️😻**",
 
 
              "😂😂😂😂😂😂😂",
@@ -28,20 +30,23 @@ txt = [
 
             "**احح لەو پیکنینە 😂😂**",
             
+           
+ 
             
-          
-             ]
+            
 
-        
+        ]
+
+
         
 
 
 @app.on_message(command(["ههه","😂😂","😂😂😂","😂🤣","ههههههههههههههههههه","😂😂😂😂😂😂"]))
 
-
 async def cutt(client: Client, message: Message):
 
-        a = random.choice(txt)
+
+      a = random.choice(txt)
 
 
       await message.reply(
