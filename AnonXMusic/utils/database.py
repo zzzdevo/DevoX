@@ -735,10 +735,7 @@ async def get_audio_bitrate(chat_id: int) -> str:
 async def get_video_bitrate(chat_id: int) -> str:
     mode = video.get(chat_id)
     if not mode:
-        if PRIVATE_BOT_MODE == str(True):
-            return VideoParameters.from_quality(VideoQuality.FHD_1080p)
-        else:
-            return VideoParameters.from_quality(VideoQuality.HD_720p)
+        return VideoParameters.from_quality(VideoQuality.FHD_1080p)
     if str(mode) == "UHD_4K":
         return VideoParameters.from_quality(VideoQuality.UHD_4K)
     elif str(mode) == "QHD_2K":
