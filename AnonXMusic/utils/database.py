@@ -14,6 +14,7 @@ chatsdb = mongodb.chats
 channeldb = mongodb.cplaymode
 countdb = mongodb.upcount
 gbansdb = mongodb.gban
+videodb = mongodb.Anonyvideocalls
 langdb = mongodb.language
 onoffdb = mongodb.onoffper
 playmodedb = mongodb.playmode
@@ -37,6 +38,9 @@ pause = {}
 playmode = {}
 playtype = {}
 skipmode = {}
+vlimit = []
+audio = {}
+video = {}
 
 
 async def get_assistant_number(chat_id: int) -> str:
@@ -644,3 +648,73 @@ async def remove_banned_user(user_id: int):
     if not is_gbanned:
         return
     return await blockeddb.delete_one({"user_id": user_id})
+
+
+# Audio Video Limit
+
+from pytgcalls.types import (
+    AudioParameters, 
+    AudioQuality, 
+    VideoParameters, 
+    VideoQuality
+)
+
+
+async def save_audio_bitrate(chat_id: int, bitrate: str):
+    audio[chat_id] = bitrate
+
+
+async def save_video_bitrate(chat_id: int, bitrate: str):
+    video[chat_id] = bitrate
+
+
+async def get_aud_bit_name(chat_id: int) -> str:
+    mode = audio.get(chat_id)
+    if not mode:
+        return "STUDIO"
+    return mode
+
+
+async def get_vid_bit_name(chat_id: int) -> str:
+    mode = video.get(chat_id)
+    if not mode:
+        if PRIVATE_BOT_MODE == str(True):
+            return "FHD_1080p"
+        else:
+            return "HD_720p"
+    return mode
+
+
+async def get_audio_bitrate(chat_id: int) -> str:
+    mode = audio.get(chat_id)
+    if not mode:
+        return AudioParameters.from_quality(AudioQuality.STUDIO)
+    if str(mode) == "STUDIO":
+        return AudioParameters.from_quality(AudioQuality.STUDIO)
+    elif str(mode) == "HIGH":
+        return AudioParameters.from_quality(AudioQuality.HIGH)
+    elif str(mode) == "MEDIUM":
+        return AudioParameters.from_quality(AudioQuality.MEDIUM)
+    elif str(mode) == "LOW":
+        return AudioParameters.from_quality(AudioQuality.LOW)
+
+
+async def get_video_bitrate(chat_id: int) -> str:
+    mode = video.get(chat_id)
+    if not mode:
+        if PRIVATE_BOT_MODE == str(True):
+            return VideoParameters.from_quality(VideoQuality.FHD_1080p)
+        else:
+            return VideoParameters.from_quality(VideoQuality.HD_720p)
+    if str(mode) == "UHD_4K":
+        return VideoParameters.from_quality(VideoQuality.UHD_4K)
+    elif str(mode) == "QHD_2K":
+        return VideoParameters.from_quality(VideoQuality.QHD_2K)
+    elif str(mode) == "FHD_1080p":
+        return VideoParameters.from_quality(VideoQuality.FHD_1080p)
+    elif str(mode) == "HD_720p":
+        return VideoParameters.from_quality(VideoQuality.HD_720p)
+    elif str(mode) == "SD_480p":
+        return VideoParameters.from_quality(VideoQuality.SD_480p)
+    elif str(mode) == "SD_360p":
+        return VideoParameters.from_quality(VideoQuality.SD_360p)
