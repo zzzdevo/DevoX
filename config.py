@@ -45,7 +45,7 @@ SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/IQSUPP")
 CHANNEL_OWNER = getenv("CHANNEL_OWNER", "https://t.me/MGIMT")
 
 ##########
-MUST_JOIN = getenv('MUST_JOIN', 'MGIMT')
+SUPPORT_IQ = getenv('SUPPORT_IQ', '@MGIMT')
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
