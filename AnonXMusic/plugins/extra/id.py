@@ -1,7 +1,7 @@
 import asyncio
 from config import OWNER_ID
 from pyrogram import Client, filters
-from AnonXMusic import app
+from YukkiMusic import app
 import random
 from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
@@ -165,8 +165,6 @@ async def idljjopen(client, message):
       iddof.remove(message.chat.id)
       return await message.reply_text(f"**فەرمانی وێنەکەم کرایەوە\n\n لەلایەن {rotba} ←{message.from_user.mention}♥️✅•**")
  
-
-
 
 @app.on_message(
     command(["وێنەکەم"])
