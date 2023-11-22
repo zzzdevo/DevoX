@@ -29,17 +29,12 @@
       },
       "MONGO_DB_URI": {
         "description": "Get a mongodb url from https://cloud.mongodb.com.",
-        "value": "mongodb+srv://jotaroiq:vG31RO17BSm0Fh6v@cluster0.r7bmz9q.mongodb.net/?retryWrites=true&w=majority",
+        "value": "",
         "required": true
       },
       "OWNER_ID": {
         "description": "The user id of user whom you would like to add as OWNER.",
-        "value": "833360381",
-        "required": true
-      },
-      "SUPPORT_CHANNEL": {
-        "description": "The user id of user whom you would like to add as OWNER.",
-        "value": "https://t.me/MGIMT",
+        "value": "",
         "required": true
       },
       "STRING_SESSION": {
@@ -59,7 +54,7 @@
       },
       "LOGGER_ID": {
         "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Channel ki id mat daal dena bsdk.",
-        "value": "-1001906948158",
+        "value": "",
         "required": true
       }
     },
